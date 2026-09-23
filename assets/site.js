@@ -47,6 +47,8 @@
     document.documentElement.lang = lang === "zh" ? "zh-CN" : "en";
     document.querySelectorAll("[data-i18n]").forEach(function (el) {
       var key = el.getAttribute("data-i18n");
+      // Tolerate a "pageKey." prefix (e.g. "engine.h1.0") that the dict omits.
+      if (key.indexOf(pageKey + ".") === 0) key = key.slice(pageKey.length + 1);
       var dict = I18N[key];
       if (dict && dict[lang]) el.textContent = dict[lang];
     });

@@ -61,15 +61,15 @@ window.SITE_I18N = {
     <p class="sub" data-i18n="index.sub">A physically-isolated pair for day-one users: the app that signs never touches the network, and the app that talks never holds your private keys. Everything is open source and auditable.</p>
 
     <div class="dl-panel">
-      <div class="dl-row">
-        <a class="dl-btn engine" data-download="engine">
-          <span class="ic">⚡</span>
-          <span class="meta"><b data-i18n="index.dl.engine.b">Download Engine</b><span data-i18n="index.dl.engine.s">Online social · Android</span></span>
+      <div class="dl-grid">
+        <a class="dl-btn" data-download="engine">
+          <span class="app-ic"><img src="assets/icon-engine.svg" alt="Engine"></span>
+          <span class="meta"><b data-i18n="index.dl.engine.b">Download Engine</b><span class="sub" data-i18n="index.dl.engine.s">Online social · Android</span></span>
           <span class="go">↓</span>
         </a>
-        <a class="dl-btn vault" data-download="vault">
-          <span class="ic">▣</span>
-          <span class="meta"><b data-i18n="index.dl.vault.b">Download Vault</b><span data-i18n="index.dl.vault.s">Offline keys · Android</span></span>
+        <a class="dl-btn" data-download="vault">
+          <span class="app-ic"><img src="assets/icon-vault.svg" alt="Vault"></span>
+          <span class="meta"><b data-i18n="index.dl.vault.b">Download Vault</b><span class="sub" data-i18n="index.dl.vault.s">Offline keys · Android</span></span>
           <span class="go">↓</span>
         </a>
       </div>
@@ -90,10 +90,14 @@ window.SITE_I18N = {
 
       <div class="app-grid">
         <!-- Vault card -->
-        <article class="app-card vault reveal">
-          <span class="tag">● SHIPPED</span>
-          <span class="role">the safe · offline private-key anchor</span>
-          <h3>Vault</h3>
+        <article class="app-card reveal">
+          <div class="top">
+            <span class="app-ic lg"><img src="assets/icon-vault.svg" alt="Vault"></span>
+            <div>
+              <h3>Vault</h3>
+              <span class="role">the safe · offline private-key anchor</span>
+            </div>
+          </div>
           <p class="one-liner">Holds your private keys and signs your identity — on a device that physically cannot reach the network.</p>
           <ul>
             <li><span class="ck">✓</span><b>No Internet</b><span>No INTERNET permission at all; keys sealed in Keystore TEE/DRM.</span></li>
@@ -107,10 +111,14 @@ window.SITE_I18N = {
         </article>
 
         <!-- Engine card -->
-        <article class="app-card engine reveal">
-          <span class="tag">● SHIPPED</span>
-          <span class="role">the voice · end-to-end encrypted social</span>
-          <h3>Engine</h3>
+        <article class="app-card reveal">
+          <div class="top">
+            <span class="app-ic lg"><img src="assets/icon-engine.svg" alt="Engine"></span>
+            <div>
+              <h3>Engine</h3>
+              <span class="role">the voice · end-to-end encrypted social</span>
+            </div>
+          </div>
           <p class="one-liner">Your encrypted social client — chat, groups and identity, all E2E, all delegated to Vault for signing.</p>
           <ul>
             <li><span class="ck">✓</span><b>E2E chat</b><span>ECDH + AES-256-GCM, AAD-bound anti-replay, open audit library.</span></li>
