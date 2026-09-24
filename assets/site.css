@@ -78,13 +78,6 @@ img { max-width: 100%; }
 .nav-links a { color: var(--muted); }
 .nav-links a:hover { color: var(--ink); }
 .nav-links a.active { color: var(--ink); font-weight: 700; }
-.lang-switch { display: inline-flex; align-items: center; border: 1px solid var(--rule-2); border-radius: 999px; overflow: hidden; background: var(--surface); }
-.lang-switch button {
-  background: transparent; border: 0; color: var(--muted);
-  font-family: var(--font-mono); font-size: 0.7rem; font-weight: 600;
-  padding: 6px 12px; cursor: pointer; letter-spacing: 0.05em;
-}
-.lang-switch button.on { background: var(--ink); color: #fff; }
 .burger { display: none; background: none; border: 0; color: var(--ink); font-size: 1.5rem; cursor: pointer; }
 
 /* ---------- Hero ---------- */
