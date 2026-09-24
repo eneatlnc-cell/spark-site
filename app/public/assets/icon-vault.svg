@@ -1,14 +1,26 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024" role="img" aria-label="Vault app icon">
   <defs>
     <linearGradient id="v-shield" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#4CD964"/>
-      <stop offset="1" stop-color="#34C759"/>
+      <stop offset="0" stop-color="#53E06B"/>
+      <stop offset="0.55" stop-color="#34C759"/>
+      <stop offset="1" stop-color="#28A745"/>
     </linearGradient>
+    <radialGradient id="v-bg" cx="0.5" cy="0.42" r="0.9">
+      <stop offset="0" stop-color="#2A2E35"/>
+      <stop offset="1" stop-color="#121417"/>
+    </radialGradient>
   </defs>
-  <rect x="22" y="22" width="980" height="980" rx="232" fill="#1C1C1E"/>
-  <!-- shield -->
-  <path d="M286 224 H738 C806 322 812 396 512 884 C212 396 218 322 286 224 Z" fill="url(#v-shield)"/>
-  <!-- info mark (black i) -->
-  <circle cx="512" cy="468" r="64" fill="#080A0B"/>
-  <rect x="452" y="606" width="120" height="212" rx="60" fill="#080A0B"/>
+  <!-- dark rounded tile -->
+  <rect x="22" y="22" width="980" height="980" rx="232" fill="url(#v-bg)"/>
+  <!-- heraldic shield -->
+  <path d="M316 296
+           C316 258 350 236 394 236
+           H630
+           C674 236 708 258 708 296
+           C708 408 666 520 512 800
+           C358 520 316 408 316 296 Z"
+        fill="url(#v-shield)"/>
+  <!-- person / i mark: head + body, centred -->
+  <circle cx="512" cy="522" r="86" fill="#080A0B"/>
+  <rect x="448" y="638" width="128" height="146" rx="64" fill="#080A0B"/>
 </svg>
