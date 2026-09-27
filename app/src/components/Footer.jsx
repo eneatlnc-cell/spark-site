@@ -1,8 +1,7 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import { APP, ORDER, LOOP, FOOT } from '../data.js'
 
-const routeOf = { vault: '/vault', engine: '/engine' }
+const anchorOf = { vault: '#vault', engine: '#engine' }
 
 export default function Footer() {
   return (
@@ -10,14 +9,14 @@ export default function Footer() {
       <div className="container">
         <div className="footer-grid">
           <div>
-            <Link to="/" className="logo"><span className="mark">◆</span>Spark<span className="brand">.</span></Link>
+            <a href="#top" className="logo"><span className="mark">◆</span>Spark<span className="brand">.</span></a>
             <p className="desc">{FOOT.desc}</p>
           </div>
           <div>
             <h4>App</h4>
             <ul>
               {ORDER.map((k) => (
-                <li key={k}><Link to={routeOf[k]}>{APP[k].name}</Link></li>
+                <li key={k}><a href={anchorOf[k]}>{APP[k].name}</a></li>
               ))}
             </ul>
           </div>

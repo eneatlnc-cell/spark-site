@@ -72,6 +72,25 @@ export const APP = {
 
 export const ORDER = ['vault', 'engine']
 
+/* ---- 手機截屏演示（純 CSS 模擬畫面）---- */
+export const CHAT = {
+  title: 'Spark 內部羣組',
+  sub: '5 名成員 · 端到端加密',
+  msgs: [
+    { from: 'them', who: '阿哲', text: '下午的治理投票，金鑰都簽好了嗎？' },
+    { from: 'me', text: '簽好了。Vault 離線簽名，Engine 只負責送出密文。' },
+    { from: 'them', who: '小魚', text: '伺服器那邊看到的全是雜訊 🔒' },
+    { sys: '此對話由 Engine3.0 加密 · Vault 離線簽名' }
+  ]
+}
+
+export const VAULT_KEYS = [
+  { name: '身分金鑰', fp: 'A4:9F:2C:71:08:DD:3E:5B', note: '永不出機' },
+  { name: '簽名授權', fp: 'E2:17:88:0C:44:F9:1D:A6', note: '僅限 Engine 呼叫' }
+]
+
+export const SIGN_REQ = { from: 'Engine', what: '身分簽章 ×1', when: '剛剛' }
+
 export const LOOP = [
   ['Spark 迴路 — 完整網站', 'https://eneatlnc-cell.github.io/Spark/'],
   ['Engine3.0 — 審計函式庫', 'https://github.com/eneatlnc-cell/Engine3.0'],

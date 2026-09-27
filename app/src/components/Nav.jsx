@@ -1,17 +1,18 @@
 import React from 'react'
-import { NavLink, Link } from 'react-router-dom'
 
 export default function Nav() {
   return (
     <header className="site-nav">
       <div className="nav-inner">
-        <Link to="/" className="logo" aria-label="Spark 首頁">
+        <a href="#top" className="logo" aria-label="Spark 首頁">
           <span className="mark">◆</span>Spark<span className="brand">.</span>
-        </Link>
+        </a>
         <nav className="nav-links">
-          <NavLink to="/vault" className="navLink">Vault</NavLink>
-          <NavLink to="/engine" className="navLink">Engine</NavLink>
+          <a href="#engine" className="navLink">Engine</a>
+          <a href="#vault" className="navLink">Vault</a>
+          <a href="#start" className="navLink">開始使用</a>
         </nav>
+        <a className="nav-cta" href="#download">下載</a>
       </div>
     </header>
   )
