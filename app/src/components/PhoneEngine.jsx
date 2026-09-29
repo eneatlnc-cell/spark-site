@@ -1,45 +1,54 @@
 import React from 'react'
 import { CHAT } from '../data.js'
 
-/* Engine 聊天畫面 — 純 CSS 模擬截屏 */
+/* Engine 聊天畫面 — 依真實 App 版面重繪（淡紫背景 · 藍漸層氣泡 · 密封訊息） */
 export default function PhoneEngine() {
   return (
     <div className="phone" aria-label="Engine 應用截屏">
-      <div className="screen screen-light">
+      <div className="screen screen-lav">
         <div className="p-status">
-          <span>9:41</span>
+          <span>14:08</span>
           <span className="p-status-r">
             <i className="p-sig" /><i className="p-wifi" /><i className="p-bat" />
           </span>
         </div>
 
         <div className="chat-head">
-          <span className="p-back">‹</span>
-          <span className="p-ava e">⛵</span>
-          <span className="p-title">
-            <b>{CHAT.title}</b>
-            <small>🔒 {CHAT.sub}</small>
-          </span>
+          <span className="p-back">←</span>
+          <span className="p-title"><b>{CHAT.title}</b></span>
         </div>
+
+        <div className="relay-row"><i className="relay-dot" />{CHAT.relay}</div>
 
         <div className="chat-body">
           {CHAT.msgs.map((m, i) =>
-            m.sys ? (
-              <div className="chat-sys" key={i}>{m.sys}</div>
+            m.react ? (
+              <div className="react-pill" key={i}>{m.react}</div>
             ) : (
               <div className={`msg ${m.from}`} key={i}>
-                {m.who && <small>{m.who}</small>}
-                <span>{m.text}</span>
+                {m.sealed ? (
+                  <>
+                    <span className="msg-seal">🔒 已密封 · {m.price}</span>
+                    <span className="msg-hint">{m.hint}</span>
+                  </>
+                ) : m.unlocked ? (
+                  <>
+                    <span className="msg-seal open">🔓 已解鎖 · {m.price}</span>
+                    <span>{m.text}</span>
+                  </>
+                ) : (
+                  <span>{m.text}</span>
+                )}
+                <small className="msg-meta">{m.time}{m.from === 'me' ? ' ✓✓' : ''}</small>
               </div>
             )
           )}
-          <div className="chat-day">今天 14:02</div>
         </div>
 
         <div className="chat-input">
-          <span className="p-ic-plus">＋</span>
-          <span className="p-field">訊息</span>
-          <span className="p-send">↑</span>
+          <span className="p-emoji">😊</span>
+          <span className="p-field">輸入訊息…</span>
+          <span className="p-lock">🔒</span>
         </div>
       </div>
     </div>

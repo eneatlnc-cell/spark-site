@@ -1,26 +1,39 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024" role="img" aria-label="Engine app icon">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108" role="img" aria-label="Engine app icon">
+  <!-- 與 APK 內 ic_launcher 規格一致：紫→藍對角漸變 + 白色帆船 -->
   <defs>
-    <linearGradient id="e-bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#6FD0FF"/>
-      <stop offset="0.5" stop-color="#2FA8F0"/>
-      <stop offset="1" stop-color="#0A76FF"/>
+    <linearGradient id="e-bg" x1="0" y1="0" x2="108" y2="108" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#7C4DFF"/>
+      <stop offset="0.5" stop-color="#3E57D2"/>
+      <stop offset="1" stop-color="#0061A4"/>
     </linearGradient>
   </defs>
-  <!-- light-blue gradient tile -->
-  <rect x="22" y="22" width="980" height="980" rx="232" fill="url(#e-bg)"/>
-  <!-- mast -->
-  <line x1="596" y1="276" x2="596" y2="620" stroke="#FFFFFF" stroke-width="26" stroke-linecap="round"/>
-  <!-- jib (front sail, right of mast) -->
-  <path d="M606 300 L826 546 Q762 582 636 600 Z" fill="#FFFFFF"/>
-  <!-- main sail (rear, left of mast) -->
-  <path d="M588 300 L368 566 Q520 598 604 588 Z" fill="#FFFFFF"/>
-  <!-- curved hull -->
-  <path d="M300 600 C420 566 706 566 842 598 L806 642 C700 666 420 670 320 636 L300 600 Z" fill="#FFFFFF"/>
-  <!-- wave ripples below -->
-  <path d="M352 696 Q450 666 548 696 Q646 726 742 696" fill="none" stroke="#FFFFFF" stroke-width="22" stroke-linecap="round" opacity="0.95"/>
-  <path d="M478 764 Q560 742 642 764 Q724 786 800 762" fill="none" stroke="#FFFFFF" stroke-width="18" stroke-linecap="round" opacity="0.8"/>
-  <!-- splash dots near bow -->
-  <circle cx="836" cy="566" r="15" fill="#FFFFFF" opacity="0.95"/>
-  <circle cx="866" cy="584" r="10" fill="#FFFFFF" opacity="0.9"/>
-  <circle cx="848" cy="610" r="8" fill="#FFFFFF" opacity="0.85"/>
+  <rect width="108" height="108" rx="18" fill="url(#e-bg)"/>
+  <g fill="#FFFFFF" stroke="none">
+    <!-- 前帆（左，直邊三角） -->
+    <path d="M53.5,25.9 L53.5,68 L31.3,68 Z"/>
+    <!-- 主帆（右，外凸弧線，較大） -->
+    <path d="M53.5,25.9 C66,36 74,54 71.3,68 L53.5,68 Z"/>
+    <!-- 桅杆（微向右傾） -->
+    <rect x="49.7" y="24.5" width="3.8" height="45" fill="#FFFFFF"
+          transform="rotate(2.3 51.8 47)"/>
+    <!-- 船體：梯形 + 底緣三個半圓波浪 -->
+    <path d="M30.2,68 L77.8,68 L73.4,84.2
+             A6.45 6.45 0 0 1 60.5,84.2
+             A6.45 6.45 0 0 1 47.6,84.2
+             A6.45 6.45 0 0 1 34.6,84.2 Z"/>
+    <!-- 主波浪（兩峰正弦） -->
+    <path d="M23.8,88.6 C28.5,86.5 30.5,86.4 34.6,86.4
+             C38.7,86.4 41.3,90.7 45.4,90.7
+             C49.5,90.7 52,86.4 56.2,86.4
+             C60.3,86.4 62.9,90.7 67,90.7
+             C71,90.7 80,87.5 84.2,88.6"
+          fill="none" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round"/>
+    <!-- 次波浪（短弧） -->
+    <path d="M62.6,95 Q75.6,99.5 88.6,94.4"
+          fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+    <!-- 水花三點（右下斜列） -->
+    <circle cx="79.9" cy="82.1" r="2.7"/>
+    <circle cx="84.2" cy="86.4" r="1.9"/>
+    <circle cx="82.1" cy="90.7" r="1.2"/>
+  </g>
 </svg>

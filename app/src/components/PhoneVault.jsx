@@ -1,56 +1,58 @@
 import React from 'react'
-import { VAULT_KEYS, SIGN_REQ } from '../data.js'
+import { VAULT } from '../data.js'
 
-/* Vault 金鑰畫面 — 純 CSS 模擬截屏（深色） */
+/* Vault 畫面 — 依真實 App 版面重繪（深色 · 保險箱狀態 · 子身份/錢包） */
+
+/* 底部標籤圖示：子身份 = 三橫線，錢包 = 疊卡 */
+const TabIcon = ({ kind }) =>
+  kind === 'id' ? (
+    <svg viewBox="0 0 16 16" width="15" height="15" aria-hidden="true">
+      <rect x="2" y="3" width="12" height="1.8" rx="0.9" fill="currentColor" />
+      <rect x="2" y="7.1" width="12" height="1.8" rx="0.9" fill="currentColor" />
+      <rect x="2" y="11.2" width="12" height="1.8" rx="0.9" fill="currentColor" />
+    </svg>
+  ) : (
+    <svg viewBox="0 0 16 16" width="15" height="15" aria-hidden="true">
+      <rect x="4.6" y="1.6" width="10" height="5.4" rx="1.4" fill="none"
+        stroke="currentColor" strokeWidth="1.5" />
+      <rect x="1.4" y="6.2" width="13.2" height="8.2" rx="1.6" fill="none"
+        stroke="currentColor" strokeWidth="1.5" />
+    </svg>
+  )
+
 export default function PhoneVault() {
   return (
     <div className="phone" aria-label="Vault 應用截屏">
       <div className="screen screen-dark">
         <div className="p-status p-status-dark">
-          <span>9:41</span>
+          <span>14:13</span>
           <span className="p-status-r">
             <i className="p-sig" /><i className="p-wifi" /><i className="p-bat" />
           </span>
         </div>
 
-        <div className="vault-head">
-          <span className="p-ava v">🛡</span>
-          <span className="p-title">
-            <b>Vault</b>
-            <small>離線金鑰庫</small>
-          </span>
-          <span className="vault-badge">● 離線</span>
+        <div className="v-head">
+          <b>{VAULT.title}</b>
+          <span className="v-lang">{VAULT.lang}</span>
         </div>
 
-        <div className="vault-body">
-          <div className="vault-hint">封存於 Keystore TEE · 無 INTERNET 權限</div>
+        <div className="v-body">
+          <div className="v-bind">
+            <span className="v-app">{VAULT.bind.app}</span>
+            <span className="v-label">{VAULT.bind.label}</span>
+            <code className="v-fp">{VAULT.bind.fp}</code>
+            <span className="v-time">{VAULT.bind.time}</span>
+          </div>
 
-          {VAULT_KEYS.map((k) => (
-            <div className="key-card" key={k.fp}>
-              <span className="key-ic">🔑</span>
-              <span className="key-meta">
-                <b>{k.name}</b>
-                <code>{k.fp}</code>
-              </span>
-              <span className="key-note">{k.note}</span>
-            </div>
-          ))}
-
-          <div className="sign-card">
-            <small>簽名請求 · {SIGN_REQ.when}</small>
-            <b>來自 {SIGN_REQ.from}</b>
-            <span className="sign-what">{SIGN_REQ.what}</span>
-            <div className="sign-actions">
-              <span className="sign-ok">核准</span>
-              <span className="sign-no">拒絕</span>
-            </div>
+          <div className="v-warn">
+            <span className="v-warn-ic">⚠</span>
+            <p>{VAULT.warn}</p>
           </div>
         </div>
 
-        <div className="vault-tabs">
-          <span className="on">金鑰</span>
-          <span>記錄</span>
-          <span>設定</span>
+        <div className="v-tabs">
+          <span className="on"><TabIcon kind="id" />{VAULT.tabs[0]}</span>
+          <span><TabIcon kind="wallet" />{VAULT.tabs[1]}</span>
         </div>
       </div>
     </div>

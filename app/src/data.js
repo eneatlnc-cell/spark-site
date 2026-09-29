@@ -72,24 +72,32 @@ export const APP = {
 
 export const ORDER = ['vault', 'engine']
 
-/* ---- 手機截屏演示（純 CSS 模擬畫面）---- */
+/* ---- 手機截屏演示（純 CSS 模擬畫面，依真實 App 版面重繪）---- */
 export const CHAT = {
-  title: 'Spark 內部羣組',
-  sub: '5 名成員 · 端到端加密',
+  title: 'Spark 團隊',
+  relay: '中繼已連接',
   msgs: [
-    { from: 'them', who: '阿哲', text: '下午的治理投票，金鑰都簽好了嗎？' },
-    { from: 'me', text: '簽好了。Vault 離線簽名，Engine 只負責送出密文。' },
-    { from: 'them', who: '小魚', text: '伺服器那邊看到的全是雜訊 🔒' },
-    { sys: '此對話由 Engine3.0 加密 · Vault 離線簽名' }
+    { from: 'them', text: '新的審計報告出來了，重點我封起來發你', time: '14:01' },
+    { from: 'me', sealed: true, price: '50 SPARK', hint: '點按查看內容', time: '14:03' },
+    { from: 'them', unlocked: true, price: '50 SPARK',
+      text: '三條旁路全堵上了，金鑰隔離沒有繞行路徑。', time: '14:05' },
+    { from: 'me', text: '伺服器上本來就只剩雜訊 😄', time: '14:06' },
+    { react: '🔥 2' }
   ]
 }
 
-export const VAULT_KEYS = [
-  { name: '身分金鑰', fp: 'A4:9F:2C:71:08:DD:3E:5B', note: '永不出機' },
-  { name: '簽名授權', fp: 'E2:17:88:0C:44:F9:1D:A6', note: '僅限 Engine 呼叫' }
-]
-
-export const SIGN_REQ = { from: 'Engine', what: '身分簽章 ×1', when: '剛剛' }
+export const VAULT = {
+  title: '保險箱狀態',
+  lang: '繁體中文',
+  bind: {
+    app: 'Engine',
+    label: '子身份指紋',
+    fp: '8f3c21a7…d94e60b2',
+    time: '綁定時間 2026-09-20 10:24'
+  },
+  warn: '清除 Vault 資料（或解除安裝）將永久銷毀身份與錢包金鑰——金鑰從不離開保險箱、無法補發。請確認理解風險後再執行。',
+  tabs: ['子身份', '錢包']
+}
 
 export const LOOP = [
   ['Spark 迴路 — 完整網站', 'https://eneatlnc-cell.github.io/Spark/'],

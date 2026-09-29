@@ -14,9 +14,10 @@
 
   --blue: #007AFF;
   --blue-600: #0860E0;
-  --green: #34C759;
-  --green-600: #1FA346;
+  --green: #4CAF50;
+  --green-600: #43A047;
   --amber: #F59E0B;
+  --engine-grad: linear-gradient(160deg, #3B82F6, #1A56DB);
 
   --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
                "PingFang SC", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
@@ -107,8 +108,8 @@ ul { list-style: none; margin: 0; padding: 0; }
 }
 .screen { height: 576px; border-radius: 38px; overflow: hidden;
   display: flex; flex-direction: column; position: relative; }
-.screen-light { background: #EFF3F8; }
-.screen-dark { background: #0F1216; }
+.screen-lav { background: linear-gradient(180deg, #EFEEFF 0%, #DFE6FF 100%); }
+.screen-dark { background: #1A1A1A; }
 
 /* 狀態列 */
 .p-status { display: flex; justify-content: space-between; align-items: center;
@@ -130,71 +131,62 @@ ul { list-style: none; margin: 0; padding: 0; }
   background: currentColor; border-radius: 0 1.5px 1.5px 0; }
 
 /* 頭像與標題（兩屏共用） */
-.p-ava { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 50%;
-  font-size: 1.05rem; flex-shrink: 0; }
-.p-ava.e { background: linear-gradient(140deg, #6FD0FF, #0A76FF); }
-.p-ava.v { background: linear-gradient(140deg, #2E343B, #16181C); border: 1px solid #2E343B; }
 .p-title { display: flex; flex-direction: column; min-width: 0; }
-.p-title b { font-size: 0.95rem; line-height: 1.25; }
-.p-title small { font-size: 0.68rem; color: var(--muted); font-weight: 550; }
+.p-title b { font-size: 0.98rem; line-height: 1.25; }
 
-/* ---- Engine 聊天畫面 ---- */
-.chat-head { display: flex; align-items: center; gap: 10px; padding: 10px 16px 12px;
-  background: #fff; border-bottom: 1px solid var(--rule); }
-.p-back { font-size: 1.5rem; color: var(--blue); line-height: 1; margin-left: -4px; }
+/* ---- Engine 聊天畫面（依真實 App：淡紫底 · 藍漸層氣泡） ---- */
+.chat-head { display: flex; align-items: center; gap: 10px; padding: 8px 16px 6px; }
+.p-back { font-size: 1.25rem; color: var(--ink); line-height: 1; margin-left: -2px; }
+.relay-row { display: flex; align-items: center; justify-content: center; gap: 6px;
+  margin: 4px auto 2px; font-size: 0.66rem; font-weight: 600; color: var(--muted);
+  background: rgba(27,31,36,0.07); border-radius: 999px; padding: 4px 12px; width: fit-content; }
+.relay-dot { width: 7px; height: 7px; border-radius: 50%; background: #34C759;
+  box-shadow: 0 0 0 2.5px rgba(52,199,89,0.18); }
 .chat-body { flex: 1; display: flex; flex-direction: column; gap: 9px;
-  padding: 16px 14px; overflow: hidden; }
-.msg { max-width: 80%; padding: 9px 13px; font-size: 0.83rem; line-height: 1.45;
+  padding: 14px 14px; overflow: hidden; }
+.msg { max-width: 84%; padding: 9px 13px 7px; font-size: 0.82rem; line-height: 1.48;
   border-radius: 17px; }
-.msg small { display: block; font-size: 0.66rem; color: var(--muted-2); margin-bottom: 2px; }
-.msg.them { align-self: flex-start; background: #fff; color: var(--ink);
-  border-bottom-left-radius: 6px; box-shadow: 0 1px 2px rgba(20,30,50,0.06); }
-.msg.me { align-self: flex-end; background: linear-gradient(140deg, #3D9BFF, #0A76FF);
-  color: #fff; border-bottom-right-radius: 6px; box-shadow: 0 3px 8px rgba(10,118,255,0.25); }
-.chat-sys { align-self: center; font-size: 0.64rem; color: var(--muted);
-  background: rgba(27,31,36,0.06); border-radius: 999px; padding: 4px 12px; margin-top: 4px; }
-.chat-day { align-self: center; font-size: 0.64rem; color: var(--muted-2); margin-top: 2px; }
-.chat-input { display: flex; align-items: center; gap: 9px; padding: 10px 14px 16px; background: #fff; }
-.p-ic-plus { display: grid; place-items: center; width: 26px; height: 26px; border-radius: 50%;
-  border: 1.5px solid var(--rule-2); color: var(--muted); font-size: 0.95rem; }
-.p-field { flex: 1; background: #EFF3F8; border-radius: 999px; padding: 8px 14px;
-  font-size: 0.8rem; color: var(--muted-2); }
-.p-send { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%;
-  background: linear-gradient(140deg, #3D9BFF, #0A76FF); color: #fff; font-size: 0.95rem; font-weight: 700; }
+.msg.them { align-self: flex-start; background: #C9E7FB; color: var(--ink);
+  border-bottom-left-radius: 5px; }
+.msg.me { align-self: flex-end; background: var(--engine-grad);
+  color: #fff; border-bottom-right-radius: 5px; box-shadow: 0 3px 9px rgba(26,86,219,0.28); }
+.msg-seal { display: block; font-weight: 750; font-size: 0.8rem; }
+.msg-seal.open { color: #B4530A; }
+.msg .msg-seal.open + span { display: block; margin-top: 2px; }
+.msg-hint { display: block; font-size: 0.68rem; opacity: 0.78; margin-top: 1px; }
+.msg-meta { display: block; text-align: right; font-size: 0.6rem; opacity: 0.72; margin-top: 3px; }
+.react-pill { align-self: center; font-size: 0.68rem; color: var(--muted);
+  background: rgba(27,31,36,0.08); border-radius: 999px; padding: 4px 12px; margin-top: 2px; }
+.chat-input { display: flex; align-items: center; gap: 9px; padding: 9px 13px 15px;
+  background: rgba(255,255,255,0.72); }
+.p-emoji { font-size: 1rem; opacity: 0.7; }
+.p-field { flex: 1; background: #fff; border-radius: 999px; padding: 8px 14px;
+  font-size: 0.8rem; color: var(--muted-2); box-shadow: inset 0 0 0 1px var(--rule-2); }
+.p-lock { display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%;
+  background: var(--amber); color: #fff; font-size: 0.85rem; }
 
-/* ---- Vault 金鑰畫面（深色） ---- */
-.vault-head { display: flex; align-items: center; gap: 11px; padding: 12px 18px;
-  background: #13161B; border-bottom: 1px solid #23272E; }
-.vault-head .p-title b { color: #F2F5F8; }
-.vault-head .p-title small { color: #7B8592; }
-.vault-badge { margin-left: auto; font-size: 0.66rem; font-weight: 700; color: var(--green);
-  background: rgba(52,199,89,0.12); border: 1px solid rgba(52,199,89,0.35);
-  padding: 4px 10px; border-radius: 999px; }
-.vault-body { flex: 1; display: flex; flex-direction: column; gap: 11px; padding: 16px 14px; }
-.vault-hint { text-align: center; font-family: var(--font-mono); font-size: 0.62rem;
-  color: #7B8592; padding: 2px 0 4px; }
-.key-card { display: flex; align-items: center; gap: 11px; background: #1A1E25;
-  border: 1px solid #262B33; border-radius: 16px; padding: 13px 14px; }
-.key-ic { font-size: 1.1rem; }
-.key-meta { min-width: 0; flex: 1; }
-.key-meta b { display: block; color: #F2F5F8; font-size: 0.88rem; }
-.key-meta code { display: block; font-family: var(--font-mono); font-size: 0.62rem;
-  color: #9AA6B5; margin-top: 3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.key-note { flex-shrink: 0; font-size: 0.62rem; color: var(--green);
-  border: 1px solid rgba(52,199,89,0.4); border-radius: 999px; padding: 3px 9px; }
-.sign-card { background: #14271C; border: 1px solid rgba(52,199,89,0.45);
-  border-radius: 16px; padding: 14px 15px; margin-top: 2px; }
-.sign-card small { font-size: 0.64rem; color: #7FA98C; }
-.sign-card b { display: block; color: #F2F5F8; font-size: 0.95rem; margin-top: 3px; }
-.sign-what { display: block; font-family: var(--font-mono); font-size: 0.68rem; color: #9AA6B5; margin-top: 4px; }
-.sign-actions { display: flex; gap: 9px; margin-top: 12px; }
-.sign-ok { flex: 1; text-align: center; background: var(--green); color: #06230F;
-  font-weight: 800; font-size: 0.8rem; border-radius: 999px; padding: 8px 0; }
-.sign-no { flex: 1; text-align: center; border: 1px solid #3A414B; color: #9AA6B5;
-  font-size: 0.8rem; border-radius: 999px; padding: 8px 0; }
-.vault-tabs { display: flex; background: #13161B; border-top: 1px solid #23272E; }
-.vault-tabs span { flex: 1; text-align: center; font-size: 0.72rem; color: #6B7480; padding: 11px 0; }
-.vault-tabs .on { color: var(--green); font-weight: 700; }
+/* ---- Vault 畫面（依真實 App：深色 · 保險箱狀態） ---- */
+.v-head { display: flex; align-items: baseline; justify-content: space-between;
+  padding: 12px 18px 8px; }
+.v-head b { color: #F2F5F8; font-size: 1.12rem; font-weight: 800; }
+.v-lang { font-size: 0.7rem; color: #9AA1AB; }
+.v-body { flex: 1; display: flex; flex-direction: column; gap: 12px; padding: 12px 14px; }
+.v-bind { background: #26292E; border-radius: 16px; padding: 14px 15px;
+  display: flex; flex-direction: column; gap: 4px; }
+.v-app { color: var(--green); font-weight: 800; font-size: 0.78rem; }
+.v-label { color: #E8ECEF; font-size: 0.82rem; font-weight: 600; }
+.v-fp { font-family: var(--font-mono); color: #FFFFFF; font-size: 0.98rem;
+  letter-spacing: 0.04em; margin-top: 1px; }
+.v-time { color: #9AA1AB; font-size: 0.66rem; margin-top: 3px; }
+.v-warn { display: flex; gap: 10px; background: #3B1E22;
+  border: 1px solid rgba(239,83,80,0.45); border-radius: 16px; padding: 13px 14px; }
+.v-warn-ic { color: #F5B301; font-size: 1rem; line-height: 1.3; }
+.v-warn p { color: #F2B8B5; font-size: 0.7rem; line-height: 1.6; }
+.v-tabs { display: flex; gap: 8px; background: #141414; border-top: 1px solid #2A2D31;
+  padding: 8px 10px 10px; }
+.v-tabs span { flex: 1; display: flex; align-items: center; justify-content: center; gap: 7px;
+  border-radius: 12px; padding: 9px 0; font-size: 0.74rem; color: #8A8F98; }
+.v-tabs span.on { background: #6E4BD8; color: #fff; font-weight: 700; }
 
 /* ============================================================
    段落
