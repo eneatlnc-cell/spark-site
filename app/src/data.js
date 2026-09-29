@@ -91,12 +91,12 @@ export const VAULT = {
   lang: '繁體中文',
   bind: {
     app: 'Engine',
-    label: '子身份指紋',
+    label: '身份指紋',
     fp: '8f3c21a7…d94e60b2',
     time: '綁定時間 2026-09-20 10:24'
   },
   warn: '清除 Vault 資料（或解除安裝）將永久銷毀身份與錢包金鑰——金鑰從不離開保險箱、無法補發。請確認理解風險後再執行。',
-  tabs: ['子身份', '錢包']
+  tabs: ['身份', '錢包']
 }
 
 export const LOOP = [
