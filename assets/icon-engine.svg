@@ -1,24 +1,26 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024" role="img" aria-label="Engine app icon">
   <defs>
     <linearGradient id="e-bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#5AC8FA"/>
-      <stop offset="1" stop-color="#007AFF"/>
+      <stop offset="0" stop-color="#6FD0FF"/>
+      <stop offset="0.5" stop-color="#2FA8F0"/>
+      <stop offset="1" stop-color="#0A76FF"/>
     </linearGradient>
   </defs>
+  <!-- light-blue gradient tile -->
   <rect x="22" y="22" width="980" height="980" rx="232" fill="url(#e-bg)"/>
   <!-- mast -->
-  <line x1="628" y1="258" x2="628" y2="636" stroke="#FFFFFF" stroke-width="26" stroke-linecap="round"/>
-  <!-- main sail (rear / left of mast) -->
-  <path d="M620 258 L340 606 Q500 640 622 622 Z" fill="#FFFFFF"/>
-  <!-- jib (front / right of mast) -->
-  <path d="M640 316 L900 566 Q790 602 660 606 Z" fill="#FFFFFF"/>
-  <!-- hull -->
-  <path d="M322 608 H906 L876 660 Q600 690 372 660 Q334 652 322 608 Z" fill="#FFFFFF"/>
-  <!-- waves -->
-  <path d="M346 724 Q456 690 566 724 Q676 758 786 724" fill="none" stroke="#FFFFFF" stroke-width="24" stroke-linecap="round"/>
-  <path d="M486 800 Q572 778 658 800 Q744 822 830 800" fill="none" stroke="#FFFFFF" stroke-width="20" stroke-linecap="round"/>
+  <line x1="596" y1="276" x2="596" y2="620" stroke="#FFFFFF" stroke-width="26" stroke-linecap="round"/>
+  <!-- jib (front sail, right of mast) -->
+  <path d="M606 300 L826 546 Q762 582 636 600 Z" fill="#FFFFFF"/>
+  <!-- main sail (rear, left of mast) -->
+  <path d="M588 300 L368 566 Q520 598 604 588 Z" fill="#FFFFFF"/>
+  <!-- curved hull -->
+  <path d="M300 600 C420 566 706 566 842 598 L806 642 C700 666 420 670 320 636 L300 600 Z" fill="#FFFFFF"/>
+  <!-- wave ripples below -->
+  <path d="M352 696 Q450 666 548 696 Q646 726 742 696" fill="none" stroke="#FFFFFF" stroke-width="22" stroke-linecap="round" opacity="0.95"/>
+  <path d="M478 764 Q560 742 642 764 Q724 786 800 762" fill="none" stroke="#FFFFFF" stroke-width="18" stroke-linecap="round" opacity="0.8"/>
   <!-- splash dots near bow -->
-  <circle cx="906" cy="592" r="16" fill="#FFFFFF"/>
-  <circle cx="936" cy="606" r="11" fill="#FFFFFF"/>
-  <circle cx="912" cy="630" r="9" fill="#FFFFFF"/>
+  <circle cx="836" cy="566" r="15" fill="#FFFFFF" opacity="0.95"/>
+  <circle cx="866" cy="584" r="10" fill="#FFFFFF" opacity="0.9"/>
+  <circle cx="848" cy="610" r="8" fill="#FFFFFF" opacity="0.85"/>
 </svg>
