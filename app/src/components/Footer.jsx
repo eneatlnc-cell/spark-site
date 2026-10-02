@@ -1,5 +1,6 @@
 import React from 'react'
 import { APP, ORDER, LOOP, FOOT } from '../data.js'
+import { IcSpark } from './icons.jsx'
 
 const anchorOf = { vault: '#vault', engine: '#engine' }
 
@@ -9,7 +10,7 @@ export default function Footer() {
       <div className="container">
         <div className="footer-grid">
           <div>
-            <a href="#top" className="logo"><span className="mark">◆</span>Spark<span className="brand">.</span></a>
+            <a href="#top" className="logo"><span className="mark"><IcSpark /></span>Spark<span className="brand">.</span></a>
             <p className="desc">{FOOT.desc}</p>
           </div>
           <div>

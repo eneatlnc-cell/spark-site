@@ -1,5 +1,6 @@
 import React from 'react'
 import { CHAT } from '../data.js'
+import { IcChevronLeft, IcDoubleCheck } from './icons.jsx'
 
 /* Engine 聊天畫面 — 依真實 App 版面重繪（淡紫背景 · 藍漸層氣泡 · 密封訊息） */
 export default function PhoneEngine() {
@@ -14,7 +15,7 @@ export default function PhoneEngine() {
         </div>
 
         <div className="chat-head">
-          <span className="p-back">←</span>
+          <IcChevronLeft />
           <span className="p-title"><b>{CHAT.title}</b></span>
         </div>
 
@@ -39,7 +40,9 @@ export default function PhoneEngine() {
                 ) : (
                   <span>{m.text}</span>
                 )}
-                <small className="msg-meta">{m.time}{m.from === 'me' ? ' ✓✓' : ''}</small>
+                <small className="msg-meta">
+                  {m.time}{m.from === 'me' && <IcDoubleCheck />}
+                </small>
               </div>
             )
           )}
